@@ -1,0 +1,37 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    width: 100%;
+    position: sticky;
+    padding: 20px;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+.navbar-icon {
+    display: none;
+}
+
+@media (max-width: 450px) {
+    ul {
+        display: none;
+    }
+    .navbar-icon{
+        height: 40px;
+        width: 40px;
+        display: block;
+    }
+}
