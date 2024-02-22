@@ -2,10 +2,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 70px;
+    height: 71px;
     width: 100%;
     position: sticky;
-    padding: 20px;
+    top: 0;
+    padding: 0 20px;
+    z-index: 9;
+    background-color: #0F0F0F;
 }
 
 ul {

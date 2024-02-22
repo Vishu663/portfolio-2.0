@@ -1,0 +1,7 @@
+.contact-main {
+    height: calc(100dvh - 71px);
+    width: 100dvw;
+    background-color: #0F0F0F;
+    display: flex;
+    overflow-x: hidden;
+}

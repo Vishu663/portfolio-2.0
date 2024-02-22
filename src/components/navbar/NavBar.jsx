@@ -1,3 +1,4 @@
+import { Link } from "react-scroll";
 import "./NavBar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 
@@ -7,10 +8,10 @@ export default function NavBar() {
         <h3>Vishal Sanap</h3>
         <GiHamburgerMenu className="navbar-icon" />
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Projects</li>
-            <li>Contacts</li>
+            <li><Link to="home" smooth={true} offset={-73} duration={500}>Home</Link></li>
+            <li><Link to="about" smooth={true} offset={-70} duration={500}>About</Link></li>
+            <li><Link to="projects" smooth={true} offset={-70} duration={500}>Projects</Link></li>
+            <li><Link to="contact" smooth={true} offset={-67} duration={500}>Contact</Link></li>
         </ul>
     </div>
     </>
