@@ -15,7 +15,7 @@ export default function About() {
 			<Element name="about">
 				<div className="about-main">
 					<div className="about-left">
-						<img src={coder2} alt="" />
+						<img className="coder2" src={coder2} alt="" />
 					</div>
 					<div className="about-right">
 						<div className="ar-top">
@@ -33,7 +33,7 @@ export default function About() {
 						</div>
 						<div className="ar-bottom">
 							<h3>My Skills</h3>
-							<ul>
+							<ul className="about-list">
 								<li>
 									<span>
 										<FaHtml5 />

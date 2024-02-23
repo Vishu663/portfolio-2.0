@@ -11,7 +11,7 @@
     background-color: #0F0F0F;
 }
 
-ul {
+.nav-list {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +29,7 @@ h3 {
 }
 
 @media (max-width: 450px) {
-    ul {
+    .nav-list {
         display: none;
     }
     .navbar-icon{

@@ -46,7 +46,7 @@ export default function Home() {
 						</div>
 					</div>
 					<div className="main-right">
-						<img src={coder} alt="coder" />
+						<img className="coder1" src={coder} alt="coder" />
 					</div>
 				</div>
 			</Element>
