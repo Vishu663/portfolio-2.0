@@ -2,7 +2,7 @@ import "./Home.css";
 import coder from "../../assets/coder.png";
 import Typewriter from "typewriter-effect";
 import { FaLinkedin, FaGithub, FaFileAlt } from "react-icons/fa";
-import { Element } from "react-scroll";
+import { Element, Link } from "react-scroll";
 
 export default function Home() {
 	return (
@@ -42,7 +42,7 @@ export default function Home() {
 							</a>
 						</div>
 						<div className="main-button">
-							<button>Get free quote</button>
+						<Link to="contact" smooth={true} offset={-67} duration={500}><button>Get free quote</button></Link>
 						</div>
 					</div>
 					<div className="main-right">

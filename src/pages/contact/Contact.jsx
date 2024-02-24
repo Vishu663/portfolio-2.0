@@ -6,40 +6,66 @@ import { FaGithub, FaInstagram } from "react-icons/fa";
 import { useState } from "react";
 
 export default function Contact() {
-	const [user,setUser] = useState({
-		name: '', email: '',subject: '',message: ''
-	})
-	let name,value
+	const [user, setUser] = useState({
+		name: "",
+		email: "",
+		subject: "",
+		message: "",
+	});
+	let name, value;
 	const data = (e) => {
+		console.log(user);
 		name = e.target.name;
 		value = e.target.value;
-		setUser({...user, [name]: value});
-		console.log(user);
-	}
-	const getData = (e) => {
-		const {name, email, subject, message} = user;
+		setUser({ ...user, [name]: value });
+		if (value.trim() === '') {
+            setErrorMessage(`Please fill ${name} field`);
+        } else {
+            setErrorMessage('');
+        }
+	};
+	const [errorMessage, setErrorMessage] = useState('');
+
+	const getData = async (e) => {
 		e.preventDefault();
-		const options = {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				name, email, subject, message
-			})
-		}
-		const res = fetch(
-			'https://portfolio-1aa30-default-rtdb.asia-southeast1.firebasedatabase.app/UserData.json',
-			options
-		)
-		if(res) {
-			alert('Message Sent')
-		}
-		else {
-			alert('error sending message')
+
+		// Check if any field is empty
+		if (Object.values(user).some((value) => value.trim() === "")) {
+			setErrorMessage("Please fill all fields");
+			return;
 		}
 
-	}
+		const options = {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(user),
+		};
+
+		try {
+			const response = await fetch(
+				"https://portfolio-1aa30-default-rtdb.asia-southeast1.firebasedatabase.app/UserData.json",
+				options
+			);
+			if (response.ok) {
+				alert("Message Sent");
+				// Clear form fields after successful submission
+				setUser({
+					name: "",
+					email: "",
+					subject: "",
+					message: "",
+				});
+			} else {
+				alert("Error sending message");
+			}
+		} catch (error) {
+			console.error("Error sending message:", error);
+			alert("Error sending message");
+		}
+	};
+
 	return (
 		<>
 			<Element name="contact">
@@ -80,13 +106,42 @@ export default function Contact() {
 						</div>
 					</div>
 					<div className="contact-right">
-						<form className="contact-form" method='POST'>
-							<input type="name" name="name" value={user.name} placeholder="Enter your full name" required onChange={data} />
-							<input type="email" name="email" value={user.email} placeholder="Enter your email" required onChange={data} />
-							<input type="text" name="subject" value={user.subject} placeholder="Enter the Subject" required onChange={data} />
-							<textarea type="text" name="message" value={user.message} placeholder="Type your Message Here" required onChange={data} />
-                            <button onClick={getData}>Submit</button>
+						<form className="contact-form" method="POST">
+							<input
+								type="name"
+								name="name"
+								value={user.name}
+								placeholder="Enter your full name"
+								required
+								onChange={data}
+							/>
+							<input
+								type="email"
+								name="email"
+								value={user.email}
+								placeholder="Enter your email"
+								required
+								onChange={data}
+							/>
+							<input
+								type="text"
+								name="subject"
+								value={user.subject}
+								placeholder="Enter the Subject"
+								required
+								onChange={data}
+							/>
+							<textarea
+								type="text"
+								name="message"
+								value={user.message}
+								placeholder="Type your Message Here"
+								required
+								onChange={data}
+							/>
+							<button onClick={getData}>Submit</button>
 						</form>
+						{errorMessage && <p className="error-message">{errorMessage}</p>}
 					</div>
 				</div>
 			</Element>
