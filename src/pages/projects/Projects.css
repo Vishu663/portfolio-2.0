@@ -1,48 +1,55 @@
 .projects-main {
-    height: calc(100dvh - 71px);
-    width: 100%;
-    display: flex;
-    overflow-x: hidden;
-    background-image: url("../../assets/coder-3.jpg");
-    background-size: cover;
-    background-position: center; /* Center the background horizontally */
-    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+  height: calc(100dvh - 71px);
+  width: 100%;
+  display: flex;
+  overflow-x: hidden;
+  background-image: url("../../assets/coder-3.jpg");
+  background-size: cover;
+  background-position: center; /* Center the background horizontally */
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .project-card {
-    height: 400px;
-    width: 400px;
-    display: flex;
-    background-color: white;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
+  height: 400px;
+  width: 400px;
+  display: flex;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
 }
 
 .project-card:hover {
-    backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 .card-img {
-    height: 390px;
-    width: 390px;
-    object-fit: cover;
-    object-position: left;
+  height: 390px;
+  width: 390px;
+  object-fit: cover;
+  object-position: left;
 }
 
-@media (max-width:450px) {
-    .projects-main{
-        flex-direction: column;
-    }
-    .project-card{
-        height: 230px;
-        width: 230px;
-    }
-    .card-img{
-        height: 220px;
-        width: 220px;
-    }
+a > h3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+@media (max-width: 450px) {
+  .projects-main {
+    flex-direction: column;
+  }
+  .project-card {
+    height: 230px;
+    width: 230px;
+  }
+  .card-img {
+    height: 220px;
+    width: 220px;
+  }
 }
