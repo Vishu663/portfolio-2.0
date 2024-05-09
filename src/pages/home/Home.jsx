@@ -35,7 +35,7 @@ export default function Home() {
                 <FaLinkedin className="social-icon" />
               </a>
               <a
-                href="https://drive.google.com/file/d/1LjLmTrX1pdg6A1fnOrIm5T7fCMLeJwjr/view?usp=sharing"
+                href="https://drive.google.com/file/d/16EHCmN5T5EivebbuKY4x0xEtGCuoNIlQ/view?usp=sharing"
                 target="_blank"
               >
                 <FaFileAlt className="social-icon" />
