@@ -22,6 +22,10 @@
   font-size: 30px;
 }
 
+.nav-list li {
+  cursor: pointer;
+}
+
 h3 {
   font-size: 30px;
 }
