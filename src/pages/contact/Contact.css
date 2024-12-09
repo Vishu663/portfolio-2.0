@@ -1,64 +1,47 @@
 .contact-main {
-  height: calc(100dvh - 71px);
+  height: 100dvh;
   width: 100%;
-  background-color: #0f0f0f;
   display: flex;
   overflow-x: hidden;
+  padding: 90px 30px 50px 30px;
+  transition: background 0.5s ease-in-out;
 }
 
-.contact-left {
+.contact-content {
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   align-items: center;
   justify-content: center;
-}
-.cl-top {
-  height: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 50px;
+  border-radius: 40px;
 }
 
-.cl-bottom {
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-}
-
-.cl-bottom ul {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.cl-bottom li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
 .contact-tw {
   display: flex;
   gap: 10px;
-  font-size: 40px;
+  font-size: 70px;
 }
 
-.contact-right {
-  height: 100%;
-  width: 50%;
+.feedback-form {
   display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
   align-items: center;
   justify-content: center;
+  background: #fcebef;
+  padding: 20px;
+  border-radius: 40px;
+  gap: 20px;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 60%;
+  width: 40%;
 }
 
 .contact-form input {
@@ -95,27 +78,40 @@
   padding: 6px 12px 6px 15px;
   width: 100%;
   border-radius: 12px;
-  color: #0f0f0f;
+  background: radial-gradient(
+    53% 80.08000000000001% at 50% 69.5%,
+    var(--token-a37e6c3e-a10c-437b-b258-07d1d49555da, #fcebef) 0%,
+    rgba(252, 252, 255, 0) 100%
+  );
   cursor: pointer;
 }
 
 .contact-form button:hover {
-  background-color: #0f0f0f;
-  color: white;
+  background: linear-gradient(180deg, #f5f7ff 0%, #ffffff 100%);
+  color: black;
 }
-@media (max-width: 425px) {
-  .contact-main {
-    flex-direction: column;
+
+.feedback-form p {
+  font-size: 20px;
+}
+
+@media (max-width: 450px) {
+  .contact-tw {
+    font-size: 22px;
   }
-  .contact-left {
-    height: 50%;
+  .contact-form {
     width: 100%;
   }
-  .contact-right {
-    height: 50%;
-    width: 100%;
+  .feedback-form {
+    width: 98%;
   }
-  .contact-form textarea {
-    height: 40px;
+}
+
+@media (max-width: 768px) and (min-width: 451px) {
+  .contact-tw {
+    font-size: 50px;
+  }
+  .contact-form {
+    width: 60%;
   }
 }

@@ -4,13 +4,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 71px;
+  height: 72px;
   width: 100%;
-  position: sticky;
+  position: fixed;
   top: 0;
-  padding: 0 20px;
+  padding: 10px 70px;
   z-index: 9;
-  background-color: #0f0f0f;
+  backdrop-filter: blur(7px);
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-list {
@@ -19,7 +21,9 @@
   justify-content: center;
   gap: 30px;
   list-style: none;
-  font-size: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-list li {
@@ -27,25 +31,32 @@
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 800;
 }
 
-.navbar-icon {
-  height: 40px;
-  width: 40px;
-  display: none;
+.nav-contact-btn {
+  padding: 10px 32px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #140533;
+  color: white;
   cursor: pointer;
 }
 
 .nav-list.show {
-  display: none;
+  display: flex;
   flex-direction: column;
   position: absolute;
   top: 71px;
   left: 0;
   width: 100%;
-  background-color: #0f0f0f;
+  background-color: rgba(255, 255, 255, 0.95);
   padding: 20px 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
 .nav-list.show li {
@@ -56,17 +67,132 @@ h3 {
   display: flex;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   .nav-list {
     display: none;
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  .nav-list.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+  .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background-color: #140533;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+  .hamburger.open .line:nth-child(1) {
+    transform: rotate(45deg) translateY(7px);
+  }
+  .hamburger.open .line:nth-child(2) {
+    transform: rotate(-45deg) translateY(-7px);
+  }
+}
+
+/* Keyframes for fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes for fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply fade-in animation only when toggled on responsive screens */
+.nav-list li.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Ensure default visibility on larger screens */
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.nav-list li {
+  opacity: 1; /* Default visibility */
+  transform: translateY(0); /* No animation on large screens */
+  transition: all 0.3s ease-out;
+}
+
+/* Mobile menu (responsive) */
+.nav-list.show li {
+  opacity: 1; /* Ensure visibility during animation */
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    display: none;
+    transform: translateY(-20px);
+    opacity: 0;
   }
   .nav-list.show {
     display: flex;
-  }
-  .navbar-icon {
-    display: block;
-  }
-  .menu-logic {
     flex-direction: column;
+    position: absolute;
+    top: 71px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  .nav-list.show li {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  /* Hamburger menu styling */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+  .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background-color: #140533;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+  .hamburger.open .line:nth-child(1) {
+    transform: rotate(45deg) translateY(7px);
+  }
+  .hamburger.open .line:nth-child(2) {
+    transform: rotate(-45deg) translateY(-7px);
   }
 }

@@ -1,0 +1,147 @@
+.tools-main {
+  height: 100dvh;
+  width: 100%;
+  /* background: linear-gradient(
+      180deg,
+      var(--token-394b655e-eb71-48d0-ad1f-647e45a4f590, #f5f7ff) 0%,
+      var(--token-394b655e-eb71-48d0-ad1f-647e45a4f590, rgb(255, 255, 255)) 100%
+    ); */
+  background: #f5f7ff;
+  display: flex;
+  overflow-x: hidden;
+  padding: 90px 30px 50px 30px;
+  transition: background 0.5s ease-in-out;
+}
+
+.tools-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  /* background: #fcebef; */
+  /* background: radial-gradient(
+      53% 80.08000000000001% at 50% 69.5%,
+      var(--token-a37e6c3e-a10c-437b-b258-07d1d49555da, #fcebef) 0%,
+      rgba(252, 252, 255, 0) 100%
+    ); */
+  border-radius: 40px;
+  justify-content: space-evenly;
+}
+
+.tools-content h2 {
+  font-size: 42px;
+  font-weight: 600;
+}
+
+.tool-heading {
+  display: flex;
+  border: 0.5px solid white;
+  padding: 6px 20px;
+  border-radius: 32px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #fcebef;
+  /* background: linear-gradient(
+    125deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    var(--token-7271da1b-9f0a-41bd-91b9-d7098d8944de, rgb(244, 237, 255)) 100%
+  ); */
+  backdrop-filter: blur(7px);
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  justify-items: center;
+}
+
+.tool {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  border-radius: 30px;
+  justify-content: space-between;
+}
+
+.tool-img {
+  width: 25%;
+  background: #fcebef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 28px;
+  padding: 4px;
+}
+
+.tool-logo {
+  height: 60px;
+  width: 60px;
+}
+
+.tool-data {
+  width: 75%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tool-data h5 {
+  font-size: 25px;
+}
+
+.tool-data span {
+  font-size: 14px;
+}
+
+@media (max-width: 450px) {
+  .tools-main {
+    padding: 30px;
+    height: auto;
+  }
+  .tools {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .tools-content h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 451px) {
+  .tools-content h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+/* Keyframe for sliding in */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animation when the class is added */
+.tool.animate-slide-in {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+/* Reset state when the class is removed */
+.tool {
+  opacity: 0;
+  transform: translateX(100px);
+}
