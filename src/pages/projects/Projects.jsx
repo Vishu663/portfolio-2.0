@@ -16,6 +16,22 @@ export default function Projects() {
     setIsModalOpen(false);
   };
 
+  const webprint = () => {
+    alert(`It is a private repo can't allow access`);
+  };
+
+  const instructions = () => {
+    alert(
+      "Please use email as test@gmail.com and psw as test123 for testing purposes"
+    );
+  };
+
+  const airbnblogin = () => {
+    alert(
+      "Please use email as joe@gmail.com and psw as joe123 for testing purposes"
+    );
+  };
+
   return (
     <>
       <Element name="projects">
@@ -31,12 +47,19 @@ export default function Projects() {
                 <h5>A full-featured hotel booking MERN stack APP</h5>
               </div>
               <div className="home-buttons">
-                <button className="home-btn-1">Visit Code</button>
+                <a
+                  href="https://github.com/Vishu663/AIRBNB-CLONE.git"
+                  target="_blank"
+                >
+                  <button className="home-btn-1">Visit Code</button>
+                </a>
                 <a
                   href="https://airbnb-clone-frontend-steel.vercel.app"
                   target="_blank"
                 >
-                  <button className="home-btn-2">Visit App</button>
+                  <button className="home-btn-2" onClick={airbnblogin}>
+                    Visit App
+                  </button>
                 </a>
               </div>
             </div>
@@ -58,9 +81,13 @@ export default function Projects() {
                 <h5>Remote 3D printing MERN Stack App</h5>
               </div>
               <div className="home-buttons">
-                <button className="home-btn-1">Visit Code</button>
+                <button className="home-btn-1" onClick={webprint}>
+                  Visit Code
+                </button>
                 <a href="https://webprint-2.vercel.app/" target="_blank">
-                  <button className="home-btn-2">Visit App</button>
+                  <button className="home-btn-2" onClick={instructions}>
+                    Visit App
+                  </button>
                 </a>
               </div>
             </div>
@@ -77,7 +104,12 @@ export default function Projects() {
                 <h5>Simple Weather Information React based App</h5>
               </div>
               <div className="home-buttons">
-                <button className="home-btn-1">Visit Code</button>
+                <a
+                  href="https://github.com/Vishu663/weather-app.git"
+                  target="_blank"
+                >
+                  <button className="home-btn-1">Visit Code</button>
+                </a>
                 <a href="https://weatherupp.vercel.app/" target="_blank">
                   <button className="home-btn-2">Visit App</button>
                 </a>

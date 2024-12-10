@@ -121,7 +121,7 @@ export default function Contact() {
                 />
                 <button onClick={getData}>Submit</button>
               </form>
-              <p>*Note: I'll get back to you in next 48 hours*</p>
+              <p>*Note: I'll try and get back to you in next 48 hours*</p>
               {errorMessage && <p className="error-message">{errorMessage}</p>}
             </div>
           </div>
