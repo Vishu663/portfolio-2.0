@@ -73,6 +73,30 @@ export default function Projects() {
           <div className="project-content-1">
             <div className="project-description">
               <h3>
+                <img src="/ai-svgrepo-com.svg" className="project-icon" />
+                AI Code Assistant Web App
+              </h3>
+              <div>
+                <h6>WEB DESIGN</h6>
+                <h5>AI code assistant built using Next.js and Gemini API</h5>
+              </div>
+              <div className="home-buttons">
+                <a href="https://github.com/Vishu663/ai-assistant-vs" target="_blank">
+                <button className="home-btn-1">Visit Code</button></a>
+                <a href="https://ai-assistant-vs.vercel.app/" target="_blank">
+                  <button className="home-btn-2">Visit App</button>
+                </a> 
+              </div>
+            </div>
+            <img
+              decoding="async"
+              src="/AI-assistant-portfolio-2.png"
+              alt=""
+            />
+          </div>
+          <div className="project-content-2">
+            <div className="project-description">
+              <h3>
                 <TiPrinter className="project-icon" />
                 WebPrint
               </h3>
@@ -93,7 +117,7 @@ export default function Projects() {
             </div>
             <img decoding="async" loading="lazy" src="/webprint.png" alt="" />
           </div>
-          <div className="project-content-2">
+          <div className="project-content-3">
             <div className="project-description">
               <h3>
                 <img src="/weatherupp-logo.svg" className="project-icon" />
@@ -116,33 +140,6 @@ export default function Projects() {
               </div>
             </div>
             <img decoding="async" src="/weatherupp-portfolio.png" alt="" />
-          </div>
-          <div className="project-content-3">
-            <div className="project-description">
-              {/* <h3>
-                <img src="/weatherupp-logo.svg" className="project-icon" />
-                WeatherUpp
-              </h3>
-              <div>
-                <h6>WEB DESIGN</h6>
-                <h5>Simple Weather Information React based App</h5>
-              </div>
-              <div className="home-buttons">
-                <button className="home-btn-1">Visit Code</button>
-                <a href="#" target="_blank">
-                  <button className="home-btn-2">Visit App</button>
-                </a> */}
-              {/* </div> */}
-              <h2>Will be up soon </h2>
-            </div>
-            <img
-              decoding="async"
-              loading="lazy"
-              // sizes="max((min(min(100vw, 1400px) - 32px, 1220px) - 30px) * 0.9451, (min(min(100vw, 1400px) - 32px, 1220px) - 30px) / 4)"
-              srcSet="https://framerusercontent.com/images/1r6OvVpgKwhFXCqANown3Ws5ho.png?scale-down-to=512 512w,https://framerusercontent.com/images/1r6OvVpgKwhFXCqANown3Ws5ho.png?scale-down-to=1024 1024w,https://framerusercontent.com/images/1r6OvVpgKwhFXCqANown3Ws5ho.png?scale-down-to=2048 2048w,https://framerusercontent.com/images/1r6OvVpgKwhFXCqANown3Ws5ho.png?scale-down-to=4096 4096w,https://framerusercontent.com/images/1r6OvVpgKwhFXCqANown3Ws5ho.png 6316w"
-              src="https://framerusercontent.com/images/1r6OvVpgKwhFXCqANown3Ws5ho.png?scale-down-to=4096"
-              alt=""
-            />
           </div>
         </div>
         {/* <div className="navigation-buttons">

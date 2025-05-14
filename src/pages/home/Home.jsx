@@ -3,6 +3,7 @@ import "./Home.css";
 import { Link } from "react-scroll";
 import { Element } from "react-scroll";
 import { FaFileAlt } from "react-icons/fa";
+import { LuNetwork } from "react-icons/lu";
 
 export default function Home() {
   const contentBoxRef = useRef(null);
@@ -42,7 +43,7 @@ export default function Home() {
               </div>
               <div className="home-buttons">
                 <Link to="projects" smooth={true} offset={1} duration={500}>
-                  <button className="home-btn-1">My Work</button>
+                  <button className="home-btn-2"><LuNetwork /> My Work</button>
                 </Link>
                 <a
                   href="https://docs.google.com/document/d/1VD0PgEqy6GirSLD9TDsj8Z1cbXW5HT4m/edit?usp=sharing&ouid=108871303173466295011&rtpof=true&sd=true"

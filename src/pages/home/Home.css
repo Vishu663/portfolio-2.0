@@ -105,6 +105,10 @@
   .tagline {
     font-size: 20px;
   }
+  .home-buttons{
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 /* Add fade-in animation */
